@@ -1,6 +1,6 @@
 <?php
 
-if ($_SESSION['token']) {
+if (isset($_SESSION['token'])) {
   header('Location: ' . BASE_URL);
   exit();
 }

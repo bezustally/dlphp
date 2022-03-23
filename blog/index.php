@@ -2,6 +2,12 @@
 
 session_start();
 
+if (isset($_SESSION['banned'])) {
+	echo '<body style="background-color:black">';
+	echo "<h1 style='color: red; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)'>Banned</h1>";
+	exit();
+}
+
 include_once('init.php');
 // addVisitLog();
 
@@ -19,14 +25,3 @@ $html = render('base/v-main', [
 ]);
 
 echo $html;
-
-
-// 1. Внедрить систему авторизации в блог.
-//    Закрыть страницы добавления, удаления и редактирования.
-
-// 2. Реализовать logout.
-//    В базовом шаблоне выводить ссылки вход / выход
-//    в зависимости от значения переменной user.
-
-// 3. (*) Внедрить в таблицу статей id_user.
-//    Разрешить пользователям удалять и редактировать только свои статьи.

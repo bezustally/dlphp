@@ -2,6 +2,6 @@
 
 $categories = getCategories();
 $args['categories'] = $categories;
-$args['isAdmin'] = URL_PARAMS['admin'];
+$args['isAdmin'] = $_SESSION['admin'];
 $pageTitle = 'Categories | BBlog';
 $pageContent = render('categories/v-all', $args);

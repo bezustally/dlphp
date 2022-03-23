@@ -16,11 +16,11 @@
     </div>
     <nav class="site-nav">
       <ul class="nav">
-        <? if ($_SESSION['token']) : ?>
+        <? if (isset($_SESSION['token'])) : ?>
           <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>add">Add</a></li>
         <? endif; ?>
         <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>categories">Categories</a></li>
-        <? if ($_SESSION['token']) : ?>
+        <? if (isset($_SESSION['token'])) : ?>
           <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>logout">Logout</a></li>
         <? else : ?>
           <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>login">Login</a></li>

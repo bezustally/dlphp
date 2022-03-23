@@ -34,11 +34,8 @@ function getRoutes() {
       ]
     ],
     [
-      'regex' => '/^categories\/?(admin)?$/',
+      'regex' => '/^categories\/?$/',
       'controller' => 'categories/all',
-      'params' => [
-        'admin' => 1,
-      ]
     ],
     [
       'regex' => "/^category\/$number$/",
