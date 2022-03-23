@@ -1,5 +1,10 @@
 <?php
 
+if ($_SESSION['token']) {
+  header('Location: ' . BASE_URL);
+  exit();
+}
+
 $pageTitle = "Login | BBlog";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -25,7 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($result) {
     $_SESSION['notification']['class'] = "alert-success";
     $_SESSION['notification']['text'] = "Вы успешно авторизованы";
-    $_SESSION['token'] = 1111111;
+    $_SESSION['token'] = 1111111111111111;
+
+    if (isUserAdmin($fields['email'])) {
+      $_SESSION['admin'] = true;
+    }
+
     header('Location: ' . BASE_URL);
     exit();
   } else {

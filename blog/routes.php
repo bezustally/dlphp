@@ -63,8 +63,12 @@ function getRoutes() {
       ]
     ],
     [
-      'regex' => '/^login$/',
+      'regex' => '/^login\/?$/',
       'controller' => 'auth/login',
+    ],
+    [
+      'regex' => '/^logout\/?$/',
+      'controller' => 'auth/logout',
     ],
   ];
 }

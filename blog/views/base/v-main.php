@@ -9,7 +9,6 @@
 </head>
 
 <body>
-  <hr class="mt0">
   <header class="site-header">
     <div class="logo">
       <div class="logo__title h3"><a class="nav-link" href="<?= BASE_URL ?>">Blog</a></div>
@@ -17,7 +16,9 @@
     </div>
     <nav class="site-nav">
       <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>add">Add</a></li>
+        <? if ($_SESSION['token']) : ?>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>add">Add</a></li>
+        <? endif; ?>
         <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>categories">Categories</a></li>
         <? if ($_SESSION['token']) : ?>
           <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>logout">Logout</a></li>
@@ -27,16 +28,19 @@
       </ul>
     </nav>
   </header>
+
   <div class="site-content">
     <div class="container">
       <?= $content ?>
     </div>
   </div>
+
   <footer class="site-footer">
     <div class="container">
       &copy; bezustally
     </div>
   </footer>
+
   <script>
     notification = document.querySelector('.alert');
     if (notification) notification.addEventListener('click', () => notification.outerHTML = '');

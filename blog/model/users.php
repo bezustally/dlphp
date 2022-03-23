@@ -27,3 +27,15 @@ function loginUser(string $email, string $password): bool {
   }
   return false;
 }
+
+function isUserAdmin(string $email) {
+  $sql = 'SELECT COUNT(*) AS count FROM Users WHERE email=:email AND role="admin"';
+  $query = dbExecuteQuery($sql, ['email' => $email]);
+
+  $result = $query->fetch();
+
+  if ($result['count']) {
+    return true;
+  }
+  return false;
+}
