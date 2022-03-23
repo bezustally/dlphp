@@ -1,0 +1,142 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-around;
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+.articles,
+.categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+.articles {
+  flex-direction: column;
+}
+.category .articles {
+  flex-direction: row;
+  gap: 20px;
+}
+.article,
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.site-footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #eee;
+}
+.center {
+  text-align: center;
+}
+.logs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.mt0 {
+  margin-top: 0;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.form form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-group textarea {
+  border-width: 1px;
+}
+select {
+  text-align: -webkit-center;
+  text-align: center;
+}
+.submit,
+input,
+textarea {
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.category__link {
+  text-decoration: none;
+}
+.fit {
+  width: fit-content;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.gap10 {
+  display: flex;
+  gap: 10px;
+}
+.login-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.logintitle {
+  padding-top: 0.5rem;
+}
+
+.loginform {
+  padding-top: 1rem;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+input {
+  text-align: center;
+}
+
+::placeholder {
+  text-align: center;
+}
+.alternativeauth {
+  padding-bottom: 10px;
+}
+.alternativeauth__title {
+  margin-bottom: 0;
+}
+.alternativeauth__icon {
+  width: 20px;
+  height: 20px;
+}
