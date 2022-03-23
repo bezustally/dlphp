@@ -8,7 +8,6 @@ if (isset($_SESSION['token'])) {
 $pageTitle = "Login | BBlog";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  print_r($_POST);
   $fields = extractFields($_POST, ['email', 'password']);
 
   $isValidEmail = validateEmail($fields['email']);
@@ -30,8 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($result) {
     $_SESSION['notification']['class'] = "alert-success";
     $_SESSION['notification']['text'] = "Вы успешно авторизованы";
-    $_SESSION['token'] = 1111111111111111;
-
+    $_SESSION['token'] = 111111111;
+    if ($_POST['cookie']) {
+      $timestamp = time() + 60 * 60 * 24 * 30;
+      $token = $timestamp;
+      setcookie('remembered', $token, $timestamp, '/');
+    }
     if (isUserAdmin($fields['email'])) {
       $_SESSION['admin'] = true;
     }

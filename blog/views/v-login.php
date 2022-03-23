@@ -11,7 +11,7 @@
       <div class="row mb-4">
         <div class="col d-flex justify-content-center">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="cookie" checked />
+            <input class="form-check-input" type="checkbox" name="cookie" checked />
             <label class="form-check-label" for="cookie"> Remember me </label>
           </div>
         </div>
