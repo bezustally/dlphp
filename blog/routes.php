@@ -20,6 +20,20 @@ function getRoutes() {
       'controller' => 'articles/all'
     ],
     [
+      'regex' => "/^delete\/$number$/",
+      'controller' => 'articles/delete',
+      'params' => [
+        'id'  => 1,
+      ]
+    ],
+    [
+      'regex' => "/^edit\/$number$/",
+      'controller' => 'articles/edit',
+      'params' => [
+        'id'  => 1,
+      ]
+    ],
+    [
       'regex' => '/^categories\/?(admin)?$/',
       'controller' => 'categories/all',
       'params' => [
@@ -38,20 +52,6 @@ function getRoutes() {
       'controller' => 'categories/add',
       'params' => [
         'add' => 1,
-      ]
-    ],
-    [
-      'regex' => "/^delete\/$number$/",
-      'controller' => 'articles/delete',
-      'params' => [
-        'id'  => 1,
-      ]
-    ],
-    [
-      'regex' => "/^edit\/$number$/",
-      'controller' => 'articles/edit',
-      'params' => [
-        'id'  => 1,
       ]
     ],
     [

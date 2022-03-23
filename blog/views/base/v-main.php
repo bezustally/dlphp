@@ -19,6 +19,11 @@
       <ul class="nav">
         <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>add">Add</a></li>
         <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>categories">Categories</a></li>
+        <? if ($_SESSION['token']) : ?>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>logout">Logout</a></li>
+        <? else : ?>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>login">Login</a></li>
+        <? endif; ?>
       </ul>
     </nav>
   </header>

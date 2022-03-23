@@ -3,6 +3,7 @@
 $pageTitle = "Login | BBlog";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  print_r($_POST);
   $fields = extractFields($_POST, ['email', 'password']);
 
   $isValidEmail = validateEmail($fields['email']);
@@ -35,4 +36,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $fields = ['email' => '', 'password' => ''];
 }
 
-$pageContent = render('v_login', $fields);
+$pageContent = render('v-login', $fields);
