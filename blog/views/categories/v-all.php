@@ -7,3 +7,8 @@
     </div>
   <? endforeach; ?>
 </div>
+<? if ($isAdmin) : ?>
+  <div class="center">
+    <a class="btn btn-primary" href="<?= BASE_URL ?>categories/add">Add</a>
+  </div>
+<? endif; ?>

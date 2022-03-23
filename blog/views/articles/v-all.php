@@ -1,4 +1,4 @@
-<? if ($_SESSION['notification']) : ?>
+<? if (isset($_SESSION['notification'])) : ?>
   <div class="alert <?= $_SESSION['notification']['class'] ?> center fit">
     <?= $_SESSION['notification']['text'] ?>
   </div>

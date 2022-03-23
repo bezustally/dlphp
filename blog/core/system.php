@@ -22,7 +22,7 @@ function parseUrl(string $url, array $routes): array {
 
       if (isset($route['params'])) {
         foreach ($route['params'] as $param => $number) {
-          $result['params'][$param] = $matches[$number];
+          $result['params'][$param] = $matches[$number] ?? "";
         }
       }
       break;

@@ -1,4 +1,4 @@
 <?php
 
 header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
-$pageContent = render('v_404');
+$pageContent = render('errors/v-404');

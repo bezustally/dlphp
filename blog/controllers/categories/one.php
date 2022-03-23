@@ -15,7 +15,7 @@ $args = [
 
 if ($hasCategory) {
   $pageTitle = $category['category_name'] . ' articles | BBlog';
-  $pageContent = render('v_category', $args);
+  $pageContent = render('categories/v-one', $args);
 } else {
   include_once('controllers/404.php');
 }

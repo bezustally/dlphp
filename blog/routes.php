@@ -5,41 +5,51 @@ function getRoutes() {
 
   return [
     [
-      'regex' => '/^add$/',
-      'controller' => 'add'
+      'regex' => '/^add\/?$/',
+      'controller' => 'articles/add'
     ],
     [
       'regex' => "/^article\/$number$/",
-      'controller' => 'article',
+      'controller' => 'articles/one',
       'params' => [
         'id'  => 1,
       ]
     ],
     [
       'regex' => '/^$/',
-      'controller' => 'articles'
+      'controller' => 'articles/all'
     ],
     [
-      'regex' => '/^categories$/',
-      'controller' => 'categories'
+      'regex' => '/^categories\/?(admin)?$/',
+      'controller' => 'categories/all',
+      'params' => [
+        'admin' => 1,
+      ]
     ],
     [
       'regex' => "/^category\/$number$/",
-      'controller' => 'category',
+      'controller' => 'categories/one',
       'params' => [
         'id'  => 1,
       ]
     ],
     [
+      'regex' => '/^categories\/?(add)?$/',
+      'controller' => 'categories/add',
+      'params' => [
+        'add' => 1,
+      ]
+    ],
+    [
       'regex' => "/^delete\/$number$/",
-      'controller' => 'delete',
+      'controller' => 'articles/delete',
       'params' => [
         'id'  => 1,
       ]
     ],
     [
       'regex' => "/^edit\/$number$/",
-      'controller' => 'edit',
+      'controller' => 'articles/edit',
       'params' => [
         'id'  => 1,
       ]
@@ -54,7 +64,7 @@ function getRoutes() {
     ],
     [
       'regex' => '/^login$/',
-      'controller' => 'login',
+      'controller' => 'auth/login',
     ],
   ];
 }

@@ -13,7 +13,7 @@ define('URL_PARAMS', $router['params']);
 
 $pageContent = defineContent();
 
-$html = render('base/v_main', [
+$html = render('base/v-main', [
 	'title' => $pageContent['title'],
 	'content' => $pageContent['html']
 ]);

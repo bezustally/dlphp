@@ -2,5 +2,6 @@
 
 $categories = getCategories();
 $args['categories'] = $categories;
+$args['isAdmin'] = URL_PARAMS['admin'];
 $pageTitle = 'Categories | BBlog';
-$pageContent = render('v_categories', $args);
+$pageContent = render('categories/v-all', $args);

@@ -38,4 +38,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $fields['validationErrors'] = $validationErrors;
 $fields['categories'] = $categories;
-$pageContent = render('v_edit', $fields);
+$pageContent = render('articles/v-edit', $fields);
